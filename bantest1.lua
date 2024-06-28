@@ -6,7 +6,7 @@ local MatsuneNotify = function(Text_i,Duration_i)
         Title = "Matsune Hub",
         Text = Text_i,
         Duration = Duration_i,
-        Icon = "rbxassetid://18202150040"
+        Icon = "rbxassetid://18241810393"
     })
 end
 --Key
@@ -66,6 +66,25 @@ HomePage:Button("Copy Discord Link", function()
     MatsuneNotify("Copy Discord Link!",5)
     setclipboard("https://discord.com/invite/6Jw2TAEta8")
 end)
+
+--// Flag Player
+function AntiBan()
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+        if v:IsA("LocalScript") then
+            if v.Name == "General" or v.Name == "Shiftlock"  or v.Name == "FallDamage" or v.Name == "4444" or v.Name == "CamBob" or v.Name == "JumpCD" or v.Name == "Looking" or v.Name == "Run" then
+                v:Destroy()
+            end
+        end
+     end
+     for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerScripts:GetDescendants()) do
+        if v:IsA("LocalScript") then
+            if v.Name == "RobloxMotor6DBugFix" or v.Name == "Clans"  or v.Name == "Codes" or v.Name == "CustomForceField" or v.Name == "MenuBloodSp"  or v.Name == "PlayerList" then
+                v:Destroy()
+            end
+        end
+     end
+    end
+    AntiBan()
 -----------------------------------------------------------------------------------------------------------------------------Function
 assert(getrawmetatable)
     grm = getrawmetatable(game)
@@ -6203,7 +6222,7 @@ spawn(function()
                     game:GetService("StarterGui"):SetCore("SendNotification", {
                         Title = "Haki Observation",
                         Text = "You Are Maxed Point",
-                        Icon = "rbxassetid://18202150040",
+                        Icon = "rbxassetid://18241810393",
                         Duration = 2.5
                     })
                     wait(2)
@@ -8217,7 +8236,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification Superhuman", 
 							Text = "Not Have Superhuman" ,
-							Icon = "rbxassetid://18202150040",
+							Icon = "rbxassetid://18241810393",
 							Duration = 2.5
 						})
 					end
@@ -8229,7 +8248,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification Death Step", 
 							Text = "Not Have Death Step" ,
-							Icon = "rbxassetid://18202150040",
+							Icon = "rbxassetid://18241810393",
 							Duration = 2.5
 						})
 					end
@@ -8241,7 +8260,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification SharkMan Karate", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "rbxassetid://18202150040",
+							Icon = "rbxassetid://18241810393",
 							Duration = 2.5
 						})
 					end
@@ -8253,7 +8272,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification Electric Claw", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "rbxassetid://18202150040",
+							Icon = "rbxassetid://18241810393",
 							Duration = 2.5
 						})
 					end
@@ -8263,7 +8282,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "rbxassetid://18202150040",
+									Icon = "rbxassetid://18241810393",
 									Duration = 2.5
 								})
 							else
@@ -8274,7 +8293,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification Dragon Talon", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "rbxassetid://18202150040",
+							Icon = "rbxassetid://18241810393",
 							Duration = 2.5
 						})
 					end
