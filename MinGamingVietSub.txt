@@ -2478,8 +2478,9 @@ end)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Min Gaming Hub", HidePremium = false, IntroText = "MinGaming Library", SaveConfig = true, ConfigFolder = "Min Gaming Hub"})
 ----------Tab-----------------------
-local W = Window:MakeTab({
-    Name = "Thông Tin",
+
+local ST = Window:MakeTab({
+    Name = "Cài đặt",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2496,12 +2497,6 @@ local Seav = Window:MakeTab({
     PremiumOnly = false
 })
 
-local ST = Window:MakeTab({
-    Name = "Cài đặt",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
 local IQ = Window:MakeTab({
     Name = "Vật phẩm",
     Icon = "rbxassetid://4483345998",
@@ -2509,7 +2504,13 @@ local IQ = Window:MakeTab({
 })
 
 local S = Window:MakeTab({
-    Name = "chri số",
+    Name = "chỉ số",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Wld = Window:MakeTab({
+    Name = "di chuyển",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2528,12 +2529,6 @@ local RA = Window:MakeTab({
 
 local LC = Window:MakeTab({
     Name = "người chơi",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-local Wld = Window:MakeTab({
-    Name = "di chuyển",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2569,201 +2564,6 @@ local C = Window:MakeTab({
 })
 
 -----Label--------------------
-local Section = W:AddSection({
-    Name = "Status"
-})
-
-local locallv = W:AddLabel("Level")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                locallv:Set("Level :".." "..game:GetService("Players").LocalPlayer.Data.Level.Value)
-            end)
-        end
-    end)
-    
-    local localrace = W:AddLabel("Race")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                localrace:Set("Race :".." "..game:GetService("Players").LocalPlayer.Data.Race.Value)
-            end)
-        end
-    end)
-    
-    local localbeli = W:AddLabel("Beli")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                localbeli:Set("Beli :".." "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
-            end)
-        end
-    end)
-    
-    local localfrag = W:AddLabel("Fragment")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                localfrag:Set("Fragments :".." "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
-            end)
-        end
-    end)
-    
-    
-    local localexp = W:AddLabel("ExP")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                localexp:Set("ExP Points :".." "..game:GetService("Players").LocalPlayer.Data.Exp.Value)
-            end)
-        end
-    end)
-    
-    local localstat = W:AddLabel("Stats Points")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                localstat:Set("Stats Points :".." "..game:GetService("Players").LocalPlayer.Data.Points.Value)
-            end)
-        end
-    end)
-    
-    local localbountyhornor = W:AddLabel("Bounty")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                localbountyhornor:Set("Bounty / Honor :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
-            end)
-        end
-    end)
-    
-    local localDevil = W:AddLabel("Devil Fruit")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if game:GetService("Players").LocalPlayer.Character:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) then
-                    localDevil:Set("Devil Fruit :".." "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
-                else
-                    localDevil:Set("Not Have Devil Fruit")
-                end
-            end)
-        end
-    end)
-
-    local Section = W:AddSection({
-        Name = "Status Hack"
-    })
-    
-    local Farmfast = W:AddLabel("Farm Fast : ❌")
-    local Bypass = W:AddLabel("Bypass ❌")
-    local Section = W:AddSection({
-        Name = "World"
-    })
-    local WolrdSet3 = W:AddLabel("World 1 ❌ ")
-    local WolrdSet = W:AddLabel("Wolrd : 2 ❌")
-    local WolrdSet1 = W:AddLabel("Wolrd : 3 ❌")
-    local Section = W:AddSection({
-        Name = "Stats Point"
-    })
-    local StastMelee = W:AddLabel("")
-    local StastDefense = W:AddLabel("")
-    local StastSword = W:AddLabel("")
-    local StastGun = W:AddLabel("")
-    local StastDevilFruit = W:AddLabel("")
-    local PointsStast = W:AddLabel("")
-    local Section = W:AddSection({
-        Name = "Melee Check"
-    })
-    local  Superhuman =             W:AddLabel("❌ : Superhuman")
-    local  DeathStep =              W:AddLabel("❌ : Sharkman Karate")
-    local  ElectricClaw =             W:AddLabel("❌ : Electric Claw")
-    local  DragonTalon =             W:AddLabel("❌ : Dragon Talon")
-    local   GodHuman =            W:AddLabel("❌ : God Human")
-    local Section = W:AddSection({
-        Name = "Sword Legend Check"
-    })
-    local   Shisui =            W:AddLabel("❌ : Shisui")
-    local     Saddi =           W:AddLabel("❌ : Saddi")
-    local      Wando =         W:AddLabel("❌ : Wando")
-    local     TrueTripleKatana          W:AddLabel("❌ : True Triple Katana")
-    local Section = W:AddSection({
-        Name = "World 1 Weapon"
-    })
-    local   Saber  = W:AddLabel("❌ : Saber")
-    local Section = W:AddSection({
-        Name = "World 2 Weapon"
-    })
-    local       Rengoku =         W:AddLabel("❌ : Rengoku")
-    local    MidnightBlade =            W:AddLabel("❌ : Midnight Blade")
-    local       DragonTrident =        W:AddLabel("❌ : DragonTrident")
-    local Section = W:AddSection({
-        Name = "World 3 Weapon"
-    })
-    local     Yama =          W:AddLabel("❌ : Yama")
-    local        BuddySword =        W:AddLabel("❌ : Buddy Sword")
-    local       Canvander =        W:AddLabel("❌ : Canvander")
-    local      TwinHooks =         W:AddLabel("❌ : Twin Hooks")
-    local     SpikeyTrident =          W:AddLabel("❌ : Spikey Trident")
-    local   HallowScythe =            W:AddLabel("❌ : Hallow Scythe")
-    local     DarkDagger =           W:AddLabel("❌ : Dark Dagger")
-    local     Tushita          W:AddLabel("❌ : Tushita")
-    local Section = W:AddSection({
-        Name = "Gun"
-    })
-    local   Kabucha =            W:AddLabel("❌ : Kabucha")
-    local   AcidumRifle =             W:AddLabel("❌ : Acidum Rifle")
-    local    BizarreRifle =            W:AddLabel("❌ : Bizarre Rifle")
-    local Section = W:AddSection({
-        Name = "Quest"
-    })
-    local   BartiloQuest =            W:AddLabel("❌ : Bartilo Quest")
-    local   DonSwanQuest =             W:AddLabel("❌ : Don Swan Quest")
-    local    KillDonSwan =           W:AddLabel("❌ : Kill Don Swan")
-
-
-local Section = W:AddSection({
-    Name = "Acessory"
-})
-
-
-local Dark_Coat = W:AddLabel("❌: Dark Coat")
-local Ghoul_Mask = W:AddLabel("❌: Ghoul Mask")
-local Swan_Glass = W:AddLabel("❌: Swan Glass")
-local Pale_Scarf = W:AddLabel("❌: Pale Scarf")
-local Valkyrie_Helm = W:AddLabel("❌: Valkyrie Helm")
-
-
-spawn(function()
-    while task.wait() do
-        pcall(function()
-            for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
-                if v.Name == "Saber" then
-                    Dark_Coat:Set("✅: Dark Coat")
-                end
-                if v.Name == "Ghoul Mask" then
-                    Ghoul_Mask:Set("✅: Ghoul Mask")
-                end
-                if v.Name == "Swan Glasses" then
-                    Swan_Glass:Set("✅: Swan Glass")
-                end
-                if v.Name == "Pale Scarf" then
-                    Pale_Scarf:Set("✅: Pale Scarf")
-                end
-                if v.Name == "Valkyrie Helmet" then
-                    Valkyrie_Helm:Set("✅: Valkyrie Helmet")
-                end
-            end
-        end)
-    end
-end)
 
 local Section = M:AddSection({
     Name = "Select Weapon"
@@ -3612,17 +3412,7 @@ end)
             StopTween(_G.AutoObservation)
         end    
     })
-    
-    M:AddToggle({
-        Name = "Cày Điểm Haki Quan Sát Đổi Sv",
-        Default = false,
-        Flag = "Tự động Farm Observation Haki[HOP]",
-        Save = true,
-        Callback = function(Value)
-            _G.AutoObservation_Hop = Value
-        end    
-    })
-
+  
     local Section = M:AddSection({
         Name = "Melee v2"
     })
@@ -3785,17 +3575,6 @@ IQ:AddToggle({
     end    
 })
 
-
-IQ:AddToggle({
-    Name = "Tự động Saber[HOP]",
-    Default = false,
-    Flag = "Tự động Saber[HOP]",
-    Save = true,
-    Callback = function(Value)
-        _G.Hop = Value
-    end    
-})
-
 local Section = IQ:AddSection({
     Name = "Pole V.1"
 })
@@ -3821,16 +3600,6 @@ TogglePolev1 = IQ:AddToggle({
     Callback = function(Value)
         _G.Autopole = Value
         StopTween(_G.AutoPole)
-    end    
-})
-
-TogglePolev1Hop = IQ:AddToggle({
-    Name = "Tự động Pole V.1[HOP]",
-    Default = false,
-    Flag = "Tự động Pole[HOP]",
-    Save = true,
-    Callback = function(Value)
-        _G.AutopoleHop = Value
     end    
 })
 
@@ -3937,16 +3706,6 @@ IQ:AddToggle({
     end    
 })
 
-IQ:AddToggle({
-    Name = "Tự động Buddy Sword[HOP]",
-    Default = false,
-    Flag = "Tự động Buddy[HOP]",
-    Save = true,
-    Callback = function(Value)
-        _G.Hop = Value
-    end    
-})
-
     local Section = IQ:AddSection({
         Name = "Soul Guita"
     })
@@ -3961,16 +3720,6 @@ IQ:AddToggle({
             StopTween(_G.AutoNevaSoulGuitar)
         end    
     })
-
-IQ:AddToggle({
-    Name = "Tự động Soul Guita[HOP]",
-    Default = false,
-    Flag = "Tự động Soul[HOP]",
-    Save = true,
-    Callback = function(Value)
-        _G.Hop = Value  
-    end    
-})
 
 IQ:AddToggle({
     Name = "Tự động Auto Observation V2",
@@ -4014,16 +3763,6 @@ IQ:AddToggle({
     end    
 })
 
-IQ:AddToggle({
-    Name = "Tự động Tushita[HOP]",
-    Default = false,
-    Flag = "Tự động Tushita[HOP]",
-    Save = true,
-    Callback = function(Value)
-        _G.Hop = Value
-    end  
-})
-
 local Section = IQ:AddSection({
     Name = "Cavander"
 })
@@ -4036,16 +3775,6 @@ IQ:AddToggle({
     Callback = function(Value)
         _G.AutoCarvender = Value
         StopTween( _G.AutoCarvender)
-    end    
-})
-
-IQ:AddToggle({
-    Name = "Tự động Cavander[HOP]",
-    Default = false,
-    Flag = "Tự động Cavander[HOP]",
-    Save = true,
-    Callback = function(Value)
-        _G.Hop = Value
     end    
 })
 
@@ -4152,94 +3881,6 @@ spawn(function()
         end
     end)
 end)
-
-local Section = IQ:AddSection({
-        Name = "Mirrage Menu"
-    })
-
-IQ:AddToggle({
-    Name = "Tự động treo đảo bí ẩn",
-    Default = false,
-    Flag = "Tự động Mirrage",
-    Save = true,
-    Callback = function(Value)
-        _G.dao = Value
-            if Value then
-                _G.dao = true
-            else
-                _G.dao = false
-            end
-        
-        
-        if _G.dao then
-        local args = {
-            [1] = "requestEntrance",
-            [2] = Vector3.new(-12463.6025390625, 378.3270568847656, -7566.0830078125)
-        }
-        
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-        wait(1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5411.22021, 778.609863, -2682.27759, 0.927179396, 0, 0.374617696, 0, 1, 0, -0.374617696, 0, 0.927179396)
-        wait(0)
-        -- Script generated by SimpleSpy - credits to exx#9394
-        
-        local args = {
-            [1] = "BuyBoat",
-            [2] = "PirateBrigade"
-        }
-        
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-        
-        function two(gotoCFrame) --- Tween
-              pcall(function()
-                  game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-              end)
-              if (game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude <= 200 then
-                  pcall(function() 
-                      tweenz:Cancel()
-                  end)
-                  game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = gotoCFrame
-              else
-                  local tween_s = game:service"TweenService"
-                  local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude/325, Enum.EasingStyle.Linear)
-                   tween, err = pcall(function()
-                      tweenz = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = gotoCFrame})
-                      tweenz:Play()
-                  end)
-                  if not tween then return err end
-              end
-              function _TweenCanCle()
-                  tweenz:Cancel()
-              end
-          
-        end
-        two(CFrame.new(-5100.7085, 29.968586, -6792.45459, -0.33648631, -0.0396691673, 0.940852463, -6.40461678e-07, 0.999112308, 0.0421253517, -0.941688359, 0.0141740013, -0.336187631))
-        
-        wait(13)
-        for _,v in next, workspace.Boats.PirateBrigade:GetDescendants() do
-            if v.Name:find("VehicleSeat") then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-             if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                                   topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
-           
-            end
-            end
-        end
-        end
-
-    end    
-}) 
-    
-IQ:AddToggle({
-    Name = "Tìm đảo bí ẩn",
-    Default = false,
-    Flag = "Tự động Mirrage2",
-    Save = true,
-    Callback = function(Value)
-        _G.Hop =  Value
-    end    
-})
 
 local Section = S:AddSection({
     Name = "Stats Select"
@@ -4755,13 +4396,37 @@ RA:AddToggle({
     end    
 })
 
-local Section = LC:AddSection({
+local Section = Wld:AddSection({
+    Name = "World Menu"
+})
+
+Wld:AddButton({
+    Name = "Old World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+      end    
+})
+
+Wld:AddButton({
+    Name = "Second World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+      end    
+})
+
+Wld:AddButton({
+    Name = "Third World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+      end    
+})
+
+local Section = Wld:AddSection({
     Name = "Teleport Island"
 })
 
-
 if World1 then
-LC:AddDropdown({
+Wld:AddDropdown({
     Name = "Select Island",
     Default = "",
     Options = {"WindMill",
@@ -4791,7 +4456,7 @@ LC:AddDropdown({
 end
 
 if World2 then
-LC:AddDropdown({
+Wld:AddDropdown({
     Name = "Select Island",
     Default = "",
     Options = {"The Cafe",
@@ -4819,7 +4484,7 @@ LC:AddDropdown({
 end
 
 if World3 then
-LC:AddDropdown({
+Wld:AddDropdown({
     Name = "Select Island",
     Default = "",
     Options = {"Mansion",
@@ -4844,7 +4509,7 @@ LC:AddDropdown({
 })
 end
 
-LC:AddToggle({
+Wld:AddToggle({
     Name = "Tele đến đảo",
     Default = false,
     Callback = function(Value)
@@ -4957,7 +4622,7 @@ LC:AddToggle({
     end    
 })
 
-local Section = LC:AddSection({
+local Section = Wld:AddSection({
     Name = "Teleport NPC"
 })
 
@@ -5010,7 +4675,7 @@ NPC3 = {
 }
 
 if World1 then
-LC:AddDropdown({
+Wld:AddDropdown({
 	Name = "Chọn NPC",
 	Default = "",
 	Options = NPC1,
@@ -5022,7 +4687,7 @@ LC:AddDropdown({
 })
 end
 if World2 then
-    LC:AddDropdown({
+    Wld:AddDropdown({
         Name = "Select NPC",
         Default = "",
         Options = NPC2,
@@ -5034,7 +4699,7 @@ if World2 then
     })
 end
     if World3 then
-        LC:AddDropdown({
+        Wld:AddDropdown({
             Name = "Chọn NPC",
             Default = "",
             Options = NPC3,
@@ -5046,7 +4711,7 @@ end
         })
     end
 
-        LC:AddToggle({
+        Wld:AddToggle({
             Name = "Tele Đến NPC",
             Default = false,
             Callback = function(Value)
@@ -5259,31 +4924,6 @@ LC:AddToggle({
     end    
 })
 
-local Section = Wld:AddSection({
-    Name = "World Menu"
-})
-
-Wld:AddButton({
-    Name = "Old World",
-    Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
-      end    
-})
-
-Wld:AddButton({
-    Name = "Second World",
-    Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
-      end    
-})
-
-Wld:AddButton({
-    Name = "Third World",
-    Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
-      end    
-})
-
 local Section = SV:AddSection({
     Name = "FullMoon Check"
 })
@@ -5334,25 +4974,7 @@ local Elite_Hunter_Status = SV:AddLabel("Only Third Sea")
                 end
             end)
         end)
-    
-        local Section = SV:AddSection({
-            Name = "Mirage Check"
-        })
-
-      if World3 then
-        spawn(function()
-            pcall(function()
-                while wait() do
-        if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-        Mirragecheck:Set('Mirrage: ✅')
-        else
-          Mirragecheck:Set('Mirrage: ❌ ' )end
-                end
-            end)
-    end)
-end
-
-Mirragecheck = SV:AddLabel("Only Third Sea")
+            
 
 local Section = SV:AddSection({
     Name = "Dough King Check"
@@ -5739,35 +5361,6 @@ spawn(function()
         end)
     end
 end)
-
-MoveCamTooMoonToggle = R:AddToggle({
-    Name = "Nhìn trăng",
-    Default = false,
-    Flag = "Move Cam to Moon",
-    Save = true,
-    Callback = function(Value)
-        _G.AutoDooHee = Value
-    end    
-})
-spawn(function()
-    while wait() do
-        pcall(function()
-            if _G.AutoDooHee then
-                local moonDir = game.Lighting:GetMoonDirection()
-                local lookAtPos = game.Workspace.CurrentCamera.CFrame.p + moonDir * 100
-                game.Workspace.CurrentCamera.CFrame = CFrame.lookAt(game.Workspace.CurrentCamera.CFrame.p, lookAtPos)
-            end
-        end)
-    end
-end)
-
-R:AddButton({
-    Name = "Tele đến Gear",
-    Callback = function()
-        _G.TweenMGear = Value
-        StopTween(_G.TweenMGear)	
-      end    
-})
 
 local Section = R:AddSection({
 	Name = "Race v4"
@@ -11279,7 +10872,47 @@ spawn(function()
 				end
 			end
 		end)
-	end)	
+	end)
+            
+Seav:AddToggle({
+    Name = "Xuyên Đá",
+    Default = false,
+    Flag = "Noclip",
+    Save = true,
+    Callback = function(value)
+        _G.NoclipR = value
+        StopTween( _G.NoclipR)
+    end    
+})
+                        spawn(function()
+                            while wait() do
+                                if _G.NoclipR then
+                                    if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+                                        for _, v in pairs(game.Workspace.Boats:GetDescendants()) do
+                                            if v:IsA("BasePart") and v.CanCollide == true then
+                                                v.CanCollide = false
+                                            end
+                                        end
+                                        for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                                            if v:IsA("BasePart") and v.CanCollide == true then
+                                                v.CanCollide = false
+                                            end
+                                        end
+                                    elseif game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+                                        for _, v in pairs(game.Workspace.Boats:GetDescendants()) do
+                                            if v:IsA("BasePart") and v.CanCollide == false then
+                                                v.CanCollide = true
+                                            end
+                                        end
+                                        for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                                            if v:IsA("BasePart") and v.CanCollide == false then
+                                                v.CanCollide = true
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end)	
 
 Seav:AddToggle({
     Name = "Đánh TerrorShark",
@@ -11481,9 +11114,9 @@ task.spawn(function()
 	while task.wait() do
 		pcall(function()
 			if game.Workspace.Map:FindFirstChild("KitsuneIsland") then
-				mr:Set("🏝 Kitsune Island :  ✅yes")
+				mr:Set("🦊 Kitsune Island :  ✅yes")
 			else
-				mr:Set("🏝 Kitsune Island :  ❌no")
+				mr:Set("🦊 Kitsune Island :  ❌no")
 			end
 		end)
 	end
@@ -11593,5 +11226,185 @@ function UpdateKitsune()
 	end
 end
 
+Seav:AddParagraph("Mirage","Mirage Island")
+
+local Tr = Seav:AddLabel("")
+
+task.spawn(function()
+	while task.wait() do
+		pcall(function()
+			if game.Workspace.Map:FindFirstChild("Mirage Island") then
+				Tr:Set("🏝 Mirage Island :  ✅yes")
+			else
+				Tr:Set("🏝 Mirage Island :  ❌no")
+			end
+		end)
+	end
+end)
+
+IQ:AddToggle({
+    Name = "Tự động treo đảo bí ẩn",
+    Default = false,
+    Flag = "Tự động Mirrage",
+    Save = true,
+    Callback = function(Value)
+        _G.dao = Value
+            if Value then
+                _G.dao = true
+            else
+                _G.dao = false
+            end
+        
+        
+        if _G.dao then
+        local args = {
+            [1] = "requestEntrance",
+            [2] = Vector3.new(-12463.6025390625, 378.3270568847656, -7566.0830078125)
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        wait(1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5411.22021, 778.609863, -2682.27759, 0.927179396, 0, 0.374617696, 0, 1, 0, -0.374617696, 0, 0.927179396)
+        wait(0)
+        -- Script generated by SimpleSpy - credits to exx#9394
+        
+        local args = {
+            [1] = "BuyBoat",
+            [2] = "PirateBrigade"
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        
+        function two(gotoCFrame) --- Tween
+              pcall(function()
+                  game.Players.LocalPlayer.Character.Humanoid.Sit = false
+                  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+              end)
+              if (game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude <= 200 then
+                  pcall(function() 
+                      tweenz:Cancel()
+                  end)
+                  game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = gotoCFrame
+              else
+                  local tween_s = game:service"TweenService"
+                  local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude/325, Enum.EasingStyle.Linear)
+                   tween, err = pcall(function()
+                      tweenz = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = gotoCFrame})
+                      tweenz:Play()
+                  end)
+                  if not tween then return err end
+              end
+              function _TweenCanCle()
+                  tweenz:Cancel()
+              end
+          
+        end
+        two(CFrame.new(-5100.7085, 29.968586, -6792.45459, -0.33648631, -0.0396691673, 0.940852463, -6.40461678e-07, 0.999112308, 0.0421253517, -0.941688359, 0.0141740013, -0.336187631))
+        
+        wait(13)
+        for _,v in next, workspace.Boats.PirateBrigade:GetDescendants() do
+            if v.Name:find("VehicleSeat") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+             if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                                   topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
+           
+            end
+            end
+        end
+        end
+
+    end    
+}) 
+
+Seav:AddToggle({
+    Name = "Bay Vô Đảo Bí Ẩn",
+    Default = false,
+    Flag = "MirageTween",
+    Save = true,
+    Callback = function(Value)
+        _G.AutoMysticIsland = Value
+        StopTween(_G.AutoMysticIsland)
+    end    
+})
+    
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoMysticIsland then
+                if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                    ATween(CFrame.new(game:GetService("Workspace").Map.MysticIsland.Center.Position.X,500,game:GetService("Workspace").Map.MysticIsland.Center.Position.Z))
+                end
+            end
+        end
+    end)
+end)
+    
+Seav:AddToggle({
+	Name = "Bay Đến Chỗ Bán Fruit",
+	Default = false,
+	Callback = function(Value)
+		_G.Miragenpc = Value
+             StopTween(_G.Miragenpc)
+	end    
+})
+spawn(function()
+    pcall(function()
+    while wait() do
+        if _G.Miragenpc then
+            if game:GetService("Workspace").NPCs:FindFirstChild("Advanced Fruit Dealer") then
+                ATween(CFrame.new(game:GetService("Workspace").NPCs["Advanced Fruit Dealer"].HumanoidRootPart.Position))
+                end
+            end
+        end
+    end)
+end)
+
+
+  Seav:AddToggle({
+	Name = "Nhìn Trăng",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoDooHee = Value
+StopTween(_G.AutoDooHee)
+	end    
+})
+spawn(function()
+    while wait() do
+		pcall(function()
+			if _G.AutoDooHee then
+			    wait(0.5)
+				local moonDir = game.Lighting:GetMoonDirection()
+                local lookAtPos = game.Workspace.CurrentCamera.CFrame.p + moonDir * 100
+                game.Workspace.CurrentCamera.CFrame = CFrame.lookAt(game.Workspace.CurrentCamera.CFrame.p, lookAtPos)
+			end
+		end)
+    end
+end)
+
+  Seav:AddToggle({
+	Name = "Tween To Gear",
+	Default = false,
+	Callback = function(Value)
+		_G.TweenMGear = Value
+StopTween(_G.TweenMGear)
+	end    
+})
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.TweenMGear then
+				if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+					for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do 
+						if v:IsA("MeshPart")then 
+                            if v.Material ==  Enum.Material.Neon then  
+                                ATween(v.CFrame)
+                            end
+                        end
+					end
+				end
+			end
+        end
+    end)
+end)
 
 OrionLib:Init()
