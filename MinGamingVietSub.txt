@@ -3812,6 +3812,41 @@ IQ:AddToggle({
             end    
         })
 
+spawn(function()
+    while wait() do
+        if _G.AutoFarmBossHallow then
+            pcall(function()
+                if game:GetService("Workspace").Enemies:FindFirstChild("Soul Reaper") then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if string.find(v.Name , "Soul Reaper") then
+                            repeat task.wait()
+                                EquipWeapon(_G.SelectWeapon)
+                                AutoHaki()
+                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                ATween(v.HumanoidRootPart.CFrame*Pos)
+                                game:GetService("VirtualUser"):CaptureController()
+                                game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
+                                v.HumanoidRootPart.Transparency = 1
+                                sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                            until v.Humanoid.Health <= 0 or _G.AutoFarmBossHallow == false
+                        end
+                    end
+                elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hallow Essence") then
+                    repeat ATween(CFrame.new(-8932.322265625, 146.83154296875, 6062.55078125)) wait() until (CFrame.new(-8932.322265625, 146.83154296875, 6062.55078125).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8                        
+                    EquipWeapon("Hallow Essence")
+                else
+                    if game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper") then
+                        ATween(game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                    else
+                        if _G.AutoFarmBossHallowHop then
+                            Hop()
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
 
 
         local Section = IQ:AddSection({
@@ -4805,28 +4840,6 @@ end
             end    
         })
 
-local Section = LC:AddSection({
-    Name = "Teleport Mirrage"
-})
-
-LC:AddButton({
-    Name = "Xóa xương mù",
-    Callback = function()
-        game:GetService("Lighting").LightingLayers:Destroy()
-        game:GetService("Lighting").Sky:Destroy()
-      end    
-})
-
-LC:AddToggle({
-    Name = "Tele đến đảo bí ẩn",
-    Default = false,
-    Flag = "Teleport to Mirage",
-    Save = true,
-    Callback = function(Value)
-        _G.AutoMysticIsland = Value
-        StopTween(_G.AutoMysticIsland)
-    end    
-})
 
 local Section = LC:AddSection({
     Name = "Players"
@@ -9954,75 +9967,6 @@ local TushitaPos = CFrame.new(-10238.875976563, 389.7912902832, -9549.7939453125
             end
         end
     end)
-    spawn(function()
-        pcall(function()
-            while wait(.1) do
-                if _G.Auto_Random_Bone2 then    
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
-                end
-            end
-        end)
-    end)
-    spawn(function()
-        while wait() do
-            if _G.AutoFarmBossHallow == true then
-                _G.Auto_Bone2 = true
-                _G.Auto_Random_Bone2 = true
-            end
-        end
-    end)
-    spawn(function()
-        while wait() do
-            if _G.AutoFarmBossHallow == false then
-                _G.Auto_Bone2 = false
-                _G.Auto_Random_Bone2 = false
-            end
-        end
-    end)
-    spawn(function()
-        while wait() do
-            if _G.AutoFarmBossHallow then
-                pcall(function()
-                    if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hallow Essence") then
-                        _G.Auto_Bone2 = true
-                        _G.Auto_Random_Bone2 = true
-                    elseif game:GetService("Workspace").Enemies:FindFirstChild("Soul Reaper") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if string.find(v.Name , "Soul Reaper") then
-                                repeat task.wait()
-                                    EquipWeapon(_G.SelectWeapon)
-                                    AutoHaki()
-                                    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                    topos(v.HumanoidRootPart.CFrame*Pos)
-                                    game:GetService("VirtualUser"):CaptureController()
-                                    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
-                                    v.HumanoidRootPart.Transparency = 1
-                                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-                                until v.Humanoid.Health <= 0 or _G.AutoFarmBossHallow == false
-                            end
-                        end
-                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hallow Essence") then
-                        _G.Auto_Bone2 = false
-                        StopTween(_G.Auto_Bone2)
-                        _G.Auto_Random_Bone2 = false
-                        repeat topos(CFrame.new(-8932.322265625, 146.83154296875, 6062.55078125)) wait() until (CFrame.new(-8932.322265625, 146.83154296875, 6062.55078125).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8                        
-                        EquipWeapon("Hallow Essence")
-                    else
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper") then
-                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                        else
-                            if CheckItem("Hallow Scythe") then
-                                ToggleHallow:Set(false)
-                                _G.Auto_Bone2 = false
-                                StopTween(_G.Auto_Bone)
-                                _G.Auto_Random_Bone2 = false
-                                end
-                            end
-                        end
-                end)
-            end
-        end
-    end)
 
 local AdminPos = CFrame.new(-5344.822265625, 423.98541259766, -2725.0930175781)
     spawn(function()
@@ -11242,7 +11186,15 @@ task.spawn(function()
 	end
 end)
 
-IQ:AddToggle({
+Seav:AddButton({
+    Name = "Xóa xương mù",
+    Callback = function()
+        game:GetService("Lighting").LightingLayers:Destroy()
+        game:GetService("Lighting").Sky:Destroy()
+      end    
+})
+
+Seav:AddToggle({
     Name = "Tự động treo đảo bí ẩn",
     Default = false,
     Flag = "Tự động Mirrage",
