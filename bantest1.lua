@@ -1747,7 +1747,7 @@ function ATween(Pos)
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
     pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/210, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
     tween:Play()
-    if Distance <= 150 then
+    if Distance <= 350 then
         tween:Cancel()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
     end
@@ -9462,26 +9462,6 @@ spawn(function()
         end
     end)
 end)
-
-Raid:Seperator("Advanced Raid")
-
-Raid:Button("Buy Law Raid Chip", function()
-    local args = {
-        [1] = "BlackbeardReward",
-        [2] = "Microchip",
-        [3] = "2"
-     }
-     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-end)
-
-Raid:Button("Start Law Raid", function()
-    fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon.Button.Main.ClickDetector)
-end)
-
-Raid:Toggle("Soon", _G.AutoOderSword,function(value)
-     _G.AutoOderSword = value
-    StopTween( _G.AutoOderSword)
-    end)
 
 Raid:Toggle("Auto Phoenix Raid", false, function(value)
     _G.AutoAdvanceDungeon = value
