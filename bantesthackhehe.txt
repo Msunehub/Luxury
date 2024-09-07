@@ -5887,7 +5887,7 @@ spawn(function()
                     game:GetService("StarterGui"):SetCore("SendNotification", {
                         Title = "Observation",
                         Text = "You Are Maxed Point",
-                        Icon = "rbxassetid://77380683580754",
+                        Icon = "rbxassetid://18216890573",
                         Duration = 2.5
                     })
                     wait(2)
@@ -8246,7 +8246,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "rbxassetid://77380683580754",
+							Icon = "rbxassetid://18216890573",
 							Duration = 2.5
 						})
 					end
@@ -8258,7 +8258,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "rbxassetid://77380683580754",
+							Icon = "rbxassetid://18216890573",
 							Duration = 2.5
 						})
 					end
@@ -8270,7 +8270,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "rbxassetid://77380683580754",
+							Icon = "rbxassetid://18216890573",
 							Duration = 2.5
 						})
 					end
@@ -8282,7 +8282,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "rbxassetid://77380683580754",
+							Icon = "rbxassetid://18216890573",
 							Duration = 2.5
 						})
 					end
@@ -8292,7 +8292,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "rbxassetid://77380683580754",
+									Icon = "rbxassetid://18216890573",
 									Duration = 2.5
 								})
 							else
@@ -8303,7 +8303,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "rbxassetid://77380683580754",
+							Icon = "rbxassetid://18216890573",
 							Duration = 2.5
 						})
 					end
@@ -12554,8 +12554,8 @@ spawn(function()
 end)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Damon hub",
+    Title = "Min Gaming",
     Text = "Loading Complete!",
-    Icon = "rbxassetid://77380683580754",
+    Icon = "rbxassetid://18216890573",
     Duration = 1
 })
